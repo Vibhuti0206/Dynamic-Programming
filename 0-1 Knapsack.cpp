@@ -3,8 +3,10 @@ using namespace std;
 int optimal(int n,int s,int size[],int value[])
 {
     int dp[n+1][s+1];
-    for(int i=0;i<n;i++) dp[i][0] = 0;
-    for(int i=0;i<s;i++) dp[0][i] = 0;
+    
+    for(int i=0;i<=n;i++) dp[i][0] = 0;
+   
+    for(int i=0;i<=s;i++) dp[0][i] = 0;
     for(int i=1;i<=n;i++)
     {
         for(int j=1;j<=s;j++)  //s is the target or the total capacity
@@ -26,7 +28,7 @@ int main()
     int size[n],value[n];
     for(int i=0;i<n;i++)
      cin>>size[i];
-    for(int i=0;i<s;i++)
+    for(int i=0;i<n;i++)
       cin>>value[i];
     cout<<optimal(n,s,size,value);
 }
